@@ -36,7 +36,7 @@ public class ScoreRepositoryImpl {
         if(retourGenerateKeys.next()){
            score.setId(retourGenerateKeys.getLong(1));
         }
-         System.out.println("score crée");
+         System.out.println("score crée en BDD");
      } catch (SQLException e) {
          e.printStackTrace();
      } finally {
@@ -53,7 +53,7 @@ public class ScoreRepositoryImpl {
     public Score getByID(Long id) {
      Session session=HibernateUtil.getSessionFactory().getCurrentSession();
       Score score = session.get(Score.class, id);
-        System.out.println("score affiché");
+        System.out.println("score lu en BDD");
         return score;
     }
 }

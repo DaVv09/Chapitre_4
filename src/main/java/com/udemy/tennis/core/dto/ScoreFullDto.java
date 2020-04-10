@@ -1,25 +1,13 @@
-package com.udemy.tennis.core.entity;
+package com.udemy.tennis.core.dto;
 
-import javax.persistence.*;
-@Entity
-@Table(name = "SCORE_VAINQUEUR")
-public class Score {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ScoreFullDto {
     private Long id;
-    @Column(name = "SET_1")
     private Byte set1;
-    @Column(name = "SET_2")
     private Byte set2;
-    @Column(name = "SET_3")
     private Byte set3;
-    @Column(name = "SET_4")
     private Byte set4;
-    @Column(name = "SET_5")
     private Byte set5;
-    @OneToOne
-    @JoinColumn(name = "ID_MATCH")
-    private Match match;
+    private MatchDto match;
 
     public Long getId() {
         return id;
@@ -27,6 +15,14 @@ public class Score {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public MatchDto getMatch() {
+        return match;
+    }
+
+    public void setMatch(MatchDto match) {
+        this.match = match;
     }
 
     public Byte getSet1() {
@@ -69,11 +65,6 @@ public class Score {
         this.set5 = set5;
     }
 
-    public Match getMatch() {
-        return match;
-    }
 
-    public void setMatch(Match match) {
-        this.match = match;
-    }
 }
+
