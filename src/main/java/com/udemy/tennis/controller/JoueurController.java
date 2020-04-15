@@ -1,5 +1,6 @@
 package com.udemy.tennis.controller;
 
+import com.udemy.tennis.core.dto.JoueurDto;
 import com.udemy.tennis.core.entity.Joueur;
 import com.udemy.tennis.core.service.JoueurService;
 
@@ -62,5 +63,15 @@ public class JoueurController {
         Long id=sc.nextLong();
         sc.nextLine();//saut de ligne consommé
        joueurService.delete(id);
+    }
+
+    public void afficheListeJoueur(){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Quel liste de joueur voulez vous afficher (F)emme ou (H)omme ?");
+        char sexe=sc.nextLine().charAt(0);
+      for(JoueurDto joueurDto : joueurService.getFulljoueurtable(sexe)){
+          System.out.println(joueurDto.getId()+" "+joueurDto.getPrenom()+" "+joueurDto.getNom()+" "+joueurDto.getSexe());
+      }
+
     }
 }

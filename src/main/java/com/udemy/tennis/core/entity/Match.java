@@ -17,8 +17,9 @@ public class Match {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ID_EPREUVE")
     private Epreuve epreuve;
-    @Transient
+    @OneToOne(mappedBy = "match", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST,orphanRemoval = true)
     private Score score;
+
 
     public Long getId() {
         return id;

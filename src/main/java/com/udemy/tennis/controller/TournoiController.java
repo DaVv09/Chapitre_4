@@ -32,7 +32,6 @@ public class TournoiController {
         tournoiDto.setNom(nom);
         tournoiDto.setCode(code);
         tournoiService.createTournoi(tournoiDto);//----------------------------------------------
-        System.out.println("Le joueur à été créer, son identifiant est "+tournoiDto.getId());
     }
 
     public void supprimeTournoi(){

@@ -1,10 +1,9 @@
 package com.udemy.tennis.core.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+import javax.persistence.*;
+
+@NamedQuery(name="givenSexe",query = "select j from Joueur j where j.sexe=?0")
 @Entity
 public class Joueur {
     @Id

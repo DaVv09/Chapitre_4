@@ -51,9 +51,16 @@ public class ScoreRepositoryImpl {
         }
     }
     public Score getByID(Long id) {
-     Session session=HibernateUtil.getSessionFactory().getCurrentSession();
-      Score score = session.get(Score.class, id);
+        Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+        Score score = session.get(Score.class, id);
         System.out.println("score lu en BDD");
         return score;
+    }
+
+    public void delete(Long id) {
+        Session session=HibernateUtil.getSessionFactory().getCurrentSession();
+        Score score = session.get(Score.class, id);
+        session.delete(score);
+        System.out.println("score supprime en BDD");
     }
 }

@@ -28,6 +28,14 @@ public class ScoreController {
         System.out.println(scoreFullDto.getSet2());
         System.out.println(scoreFullDto.getSet3());
         System.out.println(scoreFullDto.getSet4());
+        System.out.println(scoreFullDto.getSet5());
 
+    }
+
+    public void deleteScore(){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Quel est l'ID du score a supprimer?");
+        Long id=sc.nextLong();
+        scoreService.deleteScore(id);
     }
 }

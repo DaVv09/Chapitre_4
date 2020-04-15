@@ -1,12 +1,11 @@
 package com.udemy.tennis;
 
-import com.udemy.tennis.controller.EpreuveController;
-import com.udemy.tennis.controller.MatchController;
-import com.udemy.tennis.controller.ScoreController;
+import com.udemy.tennis.controller.*;
+import com.udemy.tennis.core.dto.EpreuveFullDto;
 
 public class UI {
     public static void main(String... args){
-         ScoreController controller=new ScoreController();
-         controller.afficheDetailsScore();
+         JoueurController controller=new JoueurController();
+         controller.afficheListeJoueur();
     }
 }
